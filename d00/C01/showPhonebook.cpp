@@ -4,24 +4,24 @@
 static void
 searchContact(Contact phonebook[], int nbr_contacts)
 {
-    int          index;
+	std::string c;
 
     std::cout << "Enter the index of a contact: ";
-    std::cin >> index;
+	std::getline(std::cin, c);
     std::cout << std::endl;
-    if (std::cin.good() && (index >= 0 && index < nbr_contacts))
+    if ((c[0] >= '0' && c[0] < nbr_contacts + '0'))
     {
-        std::cout << phonebook[index].getFirstName() << std::endl;
-        std::cout << phonebook[index].getLastName() << std::endl;
-        std::cout << phonebook[index].getNickname() << std::endl;
-        std::cout << phonebook[index].getLogin() << std::endl;
-        std::cout << phonebook[index].getPostalAddress() << std::endl;
-        std::cout << phonebook[index].getEmailAddress() << std::endl;
-        std::cout << phonebook[index].getPhoneNumber() << std::endl;
-        std::cout << phonebook[index].getBirthdayDate() << std::endl;
-        std::cout << phonebook[index].getFavoriteMeal() << std::endl;
-        std::cout << phonebook[index].getUnderWearColor() << std::endl;
-        std::cout << phonebook[index].getDarkestSecret() << std::endl;
+        std::cout << phonebook[c[0] - '0'].getFirstName() << std::endl;
+        std::cout << phonebook[c[0] - '0'].getLastName() << std::endl;
+        std::cout << phonebook[c[0] - '0'].getNickname() << std::endl;
+        std::cout << phonebook[c[0] - '0'].getLogin() << std::endl;
+        std::cout << phonebook[c[0] - '0'].getPostalAddress() << std::endl;
+        std::cout << phonebook[c[0] - '0'].getEmailAddress() << std::endl;
+        std::cout << phonebook[c[0] - '0'].getPhoneNumber() << std::endl;
+        std::cout << phonebook[c[0] - '0'].getBirthdayDate() << std::endl;
+        std::cout << phonebook[c[0] - '0'].getFavoriteMeal() << std::endl;
+        std::cout << phonebook[c[0] - '0'].getUnderWearColor() << std::endl;
+        std::cout << phonebook[c[0] - '0'].getDarkestSecret() << std::endl;
     }
     else
     {
