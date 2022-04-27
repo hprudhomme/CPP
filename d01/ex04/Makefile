@@ -1,38 +1,40 @@
-NAME		:= replace
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ncolomer <ncolomer@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2019/12/15 17:06:28 by ncolomer          #+#    #+#              #
+#    Updated: 2019/12/28 16:03:18 by ncolomer         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-# directories
-SRC_DIR		:= ./src
-OBJ_DIR		:= ./obj
+SRCS			= main.cpp sed.cpp
+OBJS			= $(SRCS:.cpp=.o)
 
-# src / obj files
-SRC			:=	main.cpp
+CXX				= clang++
+RM				= rm -f
+CXXFLAGS		= -Wall -Wextra -Werror -I.
 
-OBJ			:= $(addprefix $(OBJ_DIR)/,$(SRC:.cpp=.o))
+NAME			= replace
 
-# compiler
-CXX			:= clang++
-CXXFLAGS	:= -Wall -Wextra -Werror -pedantic -std=c++98
-# CXXFLAGS	+= -O3 -march=native -pipe -flto
+all:			$(NAME)
 
-.PHONY: all clean fclean re
-
-all: $(OBJ_DIR) $(NAME)
-
-$(OBJ_DIR):
-	mkdir -p $(OBJ_DIR)
-
-$(OBJ_DIR)/%.o:$(SRC_DIR)/%.cpp
-	$(CXX) $(CXXFLAGS) -o $@ -c $<
-
-$(NAME): $(OBJ)
-	$(CXX) -o $(NAME) $(OBJ)
+$(NAME):		$(OBJS)
+				$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
 
 clean:
-	rm -rf $(OBJ_DIR)
+				$(RM) $(OBJS)
 
-fclean: clean
-	rm -f $(NAME)
+fclean:			clean
+				$(RM) $(NAME) *.replace */*.replace
 
-re:
-	@$(MAKE) fclean --no-print-directory
-	@$(MAKE) all --no-print-directory
+re:				fclean $(NAME)
+
+test:			$(NAME)
+				./replace Makefile " " "."
+				./replace tests/1 "e" "E"
+				./replace tests/2 "cheval" "poney"
+
+.PHONY:			all clean fclean re test

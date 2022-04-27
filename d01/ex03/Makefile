@@ -2,13 +2,13 @@
 NAME     := weapon
 
 # Sources and objects.
-SRCS     := humanA.cpp humanB.cpp weapon.cpp main.cpp 
-HDRS     := humanA.hpp humanB.hpp weapon.hpp
+SRCS     := HumanA.cpp HumanB.cpp Weapon.cpp main.cpp
+HDRS     := HumanA.hpp HumanB.hpp Weapon.hpp
 OBJS     := $(SRCS:.cpp=.o)
 
 # Define all the compiling flags.
 CXX      := g++
-CXXFLAGS := -std=c++98 
+CXXFLAGS := -std=c++98
 
 # Compile and create everything.
 all: $(NAME)
