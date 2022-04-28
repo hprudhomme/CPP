@@ -8,26 +8,19 @@ Sed::~Sed()
 {
 }
 
-std::string Sed::strReplace(std::string const &line, std::string const &search, std::string const &replace)
+std::string Sed::strReplace(std::string &line, std::string const &search, std::string const &replace)
 {
-	std::stringstream ss;
-	size_t j;
-	size_t slength(search.length());
+	size_t pos = -1;
+	int	replace_len = replace.length();
+	int x = 1;
 
-	for (size_t i = 0; i < line.length(); i++)
+	while ((pos = line.find(search, pos + x)) <= line.length())
 	{
-		j = 0;
-		while (line[i + j] == search[j] && j < slength)
-			j++;
-		if (j == slength)
-		{
-			ss << replace;
-			i += (j - 1);
-		}
-		else
-			ss << line[i];
+		line.erase(pos, search.length());
+		line.insert(pos, replace);
+		x = replace_len;
 	}
-	return (ss.str());
+	return line;
 }
 
 void Sed::replace(std::string const &filename, std::string const &search, std::string const &replace)

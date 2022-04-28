@@ -2,13 +2,13 @@
 NAME     := bureaucrat
 
 # Sources and objects.
-SRCS     := Bureaucrat.cpp Form.cpp SchrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp main.cpp 
+SRCS     := Bureaucrat.cpp Form.cpp SchrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp main.cpp
 HDRS     := Bureaucrat.hpp SchrubberyCreationForm.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp Form.hpp Intern.hpp
 OBJS     := $(SRCS:.cpp=.o)
 
 # Define all the compiling flags.
-CXX      := g++
-CXXFLAGS := -std=c++98 
+CXX      := c++
+CXXFLAGS := -std=c++98
 
 # Compile and create everything.
 all: $(NAME)

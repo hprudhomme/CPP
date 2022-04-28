@@ -2,13 +2,13 @@
 NAME     := scalar
 
 # Sources and objects.
-SRCS     := Scalar.cpp main.cpp 
+SRCS     := Scalar.cpp main.cpp
 HDRS     := Scalar.hpp
 OBJS     := $(SRCS:.cpp=.o)
 
 # Define all the compiling flags.
-CXX      := g++
-CXXFLAGS := -std=c++98 
+CXX      := c++
+CXXFLAGS := -std=c++98
 
 # Compile and create everything.
 all: $(NAME)

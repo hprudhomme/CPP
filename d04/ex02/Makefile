@@ -2,13 +2,13 @@
 NAME     := aanimal
 
 # Sources and objects.
-SRCS     := AAnimal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp main.cpp 
+SRCS     := AAnimal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp main.cpp
 HDRS     := AAnimal.hpp Dog.hpp Cat.hpp WrongAnimal.hpp WrongCat.hpp brain.hpp
 OBJS     := $(SRCS:.cpp=.o)
 
 # Define all the compiling flags.
-CXX      := g++
-CXXFLAGS := -std=c++98 
+CXX      := c++
+CXXFLAGS := -std=c++98
 
 # Compile and create everything.
 all: $(NAME)

@@ -1,7 +1,7 @@
 SRCS			= megaphone.cpp
 OBJS			= $(SRCS:.cpp=.o)
 
-CXX				= clang++
+CXX				= clanc++
 RM				= rm -f
 CXXFLAGS		= -Wall -Wextra -Werror -I.
 

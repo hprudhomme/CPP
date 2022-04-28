@@ -2,13 +2,13 @@
 NAME     := Harl
 
 # Sources and objects.
-SRCS     := Harl.cpp main.cpp 
+SRCS     := Harl.cpp main.cpp
 HDRS     := Harl.hpp
 OBJS     := $(SRCS:.cpp=.o)
 
 # Define all the compiling flags.
-CXX      := g++
-CXXFLAGS := -std=c++98 
+CXX      := c++
+CXXFLAGS := -std=c++98 -Wall -Wextra -Werror
 
 # Compile and create everything.
 all: $(NAME)

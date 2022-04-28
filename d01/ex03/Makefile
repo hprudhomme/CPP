@@ -7,7 +7,7 @@ HDRS     := HumanA.hpp HumanB.hpp Weapon.hpp
 OBJS     := $(SRCS:.cpp=.o)
 
 # Define all the compiling flags.
-CXX      := g++
+CXX      := c++
 CXXFLAGS := -std=c++98
 
 # Compile and create everything.

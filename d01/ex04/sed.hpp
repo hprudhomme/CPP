@@ -8,7 +8,7 @@
 class Sed
 {
 private:
-	static std::string strReplace(std::string const &line, std::string const &search, std::string const &replace);
+	static std::string strReplace(std::string &line, std::string const &search, std::string const &replace);
 public:
 	Sed();
 	virtual ~Sed();

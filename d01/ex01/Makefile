@@ -2,13 +2,13 @@
 NAME     := zombie
 
 # Sources and objects.
-SRCS     := zombie.cpp main.cpp 
+SRCS     := zombie.cpp main.cpp
 HDRS     := zombie.hpp
 OBJS     := $(SRCS:.cpp=.o)
 
 # Define all the compiling flags.
-CXX      := g++
-CXXFLAGS := -std=c++98 
+CXX      := c++
+CXXFLAGS := -Wall -Wextra -Werror -std=c++98
 
 # Compile and create everything.
 all: $(NAME)

@@ -2,12 +2,12 @@
 NAME     := phonebook
 
 # Sources and objects.
-SRCS     := contact.cpp addContact.cpp showPhonebook.cpp phonebook.cpp main.cpp 
+SRCS     := contact.cpp addContact.cpp showPhonebook.cpp phonebook.cpp main.cpp
 HDRS     := contact.hpp phonebook.hpp
 OBJS     := $(SRCS:.cpp=.o)
 
 # Define all the compiling flags.
-CXX      := g++
+CXX      := c++
 CXXFLAGS := -std=c++98 -Wall -Werror -Wextra
 
 # Compile and create everything.

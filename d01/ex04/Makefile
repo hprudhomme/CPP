@@ -1,40 +1,39 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: ncolomer <ncolomer@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/12/15 17:06:28 by ncolomer          #+#    #+#              #
-#    Updated: 2019/12/28 16:03:18 by ncolomer         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
+# Name of the program.
+NAME     := sed
 
-SRCS			= main.cpp sed.cpp
-OBJS			= $(SRCS:.cpp=.o)
+# Sources and objects.
+SRCS     := sed.cpp main.cpp
+HDRS     := sed.hpp
+OBJS     := $(SRCS:.cpp=.o)
 
-CXX				= clang++
-RM				= rm -f
-CXXFLAGS		= -Wall -Wextra -Werror -I.
+# Define all the compiling flags.
+CXX      := c++
+CXXFLAGS := -Wall -Wextra -Werror -std=c++98
 
-NAME			= replace
+# Compile and create everything.
+all: $(NAME)
 
-all:			$(NAME)
+# Compile the program with the objects.
+$(NAME): $(OBJS) $(HDRS)
+	@$(CXX) $(OBJS) -o $@
 
-$(NAME):		$(OBJS)
-				$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
+# This won't run if the source files don't exist or are not modified.
+%.o: %.cpp %.hpp
+	$(CXX) $(CXXFLAGS) -o $@ -c $<
 
+# Rule to remove all the object files.
 clean:
-				$(RM) $(OBJS)
+	@rm -f $(OBJS) *.replace */*.replace
+	@echo "[INFO] Objects removed!"
 
-fclean:			clean
-				$(RM) $(NAME) *.replace */*.replace
+# Rule to remove everything that has been created by the makefile.
+fclean: clean
+	@rm -f $(NAME)
+	@echo "[INFO] $(NAME) removed!"
 
-re:				fclean $(NAME)
+# Rule to re-make everything.
+re:     fclean all
 
-test:			$(NAME)
-				./replace Makefile " " "."
-				./replace tests/1 "e" "E"
-				./replace tests/2 "cheval" "poney"
-
-.PHONY:			all clean fclean re test
+# Makes sure that gnu make will still run even if files called
+# clean / fclean / all and re already exist in the directory
+.PHONY: all clean fclean format re

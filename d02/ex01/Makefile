@@ -2,13 +2,13 @@
 NAME     := fixed
 
 # Sources and objects.
-SRCS     := Fixed.cpp main.cpp 
+SRCS     := Fixed.cpp main.cpp
 HDRS     := Fixed.hpp
 OBJS     := $(SRCS:.cpp=.o)
 
 # Define all the compiling flags.
-CXX      := g++
-CXXFLAGS := -std=c++98 
+CXX      := c++
+CXXFLAGS := -std=c++98
 
 # Compile and create everything.
 all: $(NAME)
