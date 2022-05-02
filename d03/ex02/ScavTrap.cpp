@@ -12,7 +12,7 @@ ScavTrap::ScavTrap(): ClapTrap()
 ScavTrap::ScavTrap(const ScavTrap &scavtrap)
 {
 	*this = scavtrap;
-	std::cout << "<" << this->_Name << "> ScavTrap(derived) copy constructor called" << std::endl;
+	std::cout << this->_Name << " ScavTrap(derived) copy constructor called" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name): ClapTrap(name)
@@ -21,12 +21,12 @@ ScavTrap::ScavTrap(std::string name): ClapTrap(name)
 	this->_EnergyPoint = 50;
 	this->_AttackDamage = 20;
 	this->_guardGate_mode = false;
-	std::cout << "<" << this->_Name << "> ScavTrap(derived) string constructor called" << std::endl;
+	std::cout << this->_Name << " ScavTrap(derived) string constructor called" << std::endl;
 }
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "<" << this->_Name << "> ScavTrap(derived) destructor called" << std::endl;
+	std::cout << this->_Name << " ScavTrap(derived) destructor called" << std::endl;
 }
 
 ScavTrap &ScavTrap::operator=(const ScavTrap &scavtrap)

@@ -13,18 +13,18 @@ FragTrap::FragTrap(std::string name): ClapTrap(name)
 	this->_Hitpoint = 100;
 	this->_EnergyPoint = 100;
 	this->_AttackDamage = 30;
-	std::cout << "<" << this->_Name << "> FragTrap(derived) string constructor called" << std::endl;
+	std::cout << this->_Name << " FragTrap(derived) string constructor called" << std::endl;
 }
 
 FragTrap::FragTrap(const FragTrap &fragtrap)
 {
 	*this = fragtrap;
-	std::cout << "<" << this->_Name << "> FragTrap(derived) copy constructor called" << std::endl;
+	std::cout << this->_Name << " FragTrap(derived) copy constructor called" << std::endl;
 }
 
 FragTrap::~FragTrap()
 {
-	std::cout << "<" << this->_Name << "> FragTrap(derived) destructor called" << std::endl;
+	std::cout << this->_Name << " FragTrap(derived) destructor called" << std::endl;
 }
 
 FragTrap	&FragTrap::operator=(const FragTrap &fragtrap)

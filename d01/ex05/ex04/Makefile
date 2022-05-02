@@ -1,14 +1,14 @@
 # Name of the program.
-NAME     := fragtrap
+NAME     := sed
 
 # Sources and objects.
-SRCS     := ClapTrap.cpp FragTrap.cpp ScavTrap.cpp main.cpp
-HDRS     := ClapTrap.hpp FragTrap.hpp ScavTrap.hpp
+SRCS     := sed.cpp main.cpp
+HDRS     := sed.hpp
 OBJS     := $(SRCS:.cpp=.o)
 
 # Define all the compiling flags.
 CXX      := c++
-CXXFLAGS := -std=c++98 -Wall -Wextra -Werror
+CXXFLAGS := -Wall -Wextra -Werror -std=c++98
 
 # Compile and create everything.
 all: $(NAME)
@@ -23,7 +23,7 @@ $(NAME): $(OBJS) $(HDRS)
 
 # Rule to remove all the object files.
 clean:
-	@rm -f $(OBJS)
+	@rm -f $(OBJS) *.replace */*.replace
 	@echo "[INFO] Objects removed!"
 
 # Rule to remove everything that has been created by the makefile.

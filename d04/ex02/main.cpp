@@ -1,13 +1,13 @@
 #include "Dog.hpp"
 #include "Cat.hpp"
 #include "Brain.hpp"
+
 #define NUMBER_OF_ANIMALS 8
+
 int	main( void )
 {
 	AAnimal	*animals[NUMBER_OF_ANIMALS];
 	Brain	*brain;
-
-	// AAnimal *meta = new AAnimal();
 
 	for (int i = 0; i < NUMBER_OF_ANIMALS; i++)
 	{

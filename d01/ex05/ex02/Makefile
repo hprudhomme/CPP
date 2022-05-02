@@ -1,20 +1,19 @@
 # Name of the program.
-NAME     := fragtrap
+NAME     := Brain
 
 # Sources and objects.
-SRCS     := ClapTrap.cpp FragTrap.cpp ScavTrap.cpp main.cpp
-HDRS     := ClapTrap.hpp FragTrap.hpp ScavTrap.hpp
+SRCS     := main.cpp
 OBJS     := $(SRCS:.cpp=.o)
 
 # Define all the compiling flags.
 CXX      := c++
-CXXFLAGS := -std=c++98 -Wall -Wextra -Werror
+CXXFLAGS := -Wall -Wextra -Werror -std=c++98
 
 # Compile and create everything.
 all: $(NAME)
 
 # Compile the program with the objects.
-$(NAME): $(OBJS) $(HDRS)
+$(NAME): $(OBJS)
 	@$(CXX) $(OBJS) -o $@
 
 # This won't run if the source files don't exist or are not modified.

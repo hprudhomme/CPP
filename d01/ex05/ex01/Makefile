@@ -1,14 +1,14 @@
 # Name of the program.
-NAME     := fragtrap
+NAME     := zombie
 
 # Sources and objects.
-SRCS     := ClapTrap.cpp FragTrap.cpp ScavTrap.cpp main.cpp
-HDRS     := ClapTrap.hpp FragTrap.hpp ScavTrap.hpp
+SRCS     := zombie.cpp main.cpp
+HDRS     := zombie.hpp
 OBJS     := $(SRCS:.cpp=.o)
 
 # Define all the compiling flags.
 CXX      := c++
-CXXFLAGS := -std=c++98 -Wall -Wextra -Werror
+CXXFLAGS := -Wall -Wextra -Werror -std=c++98
 
 # Compile and create everything.
 all: $(NAME)
