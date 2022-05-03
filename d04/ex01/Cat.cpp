@@ -1,5 +1,5 @@
 #include "Cat.hpp"
-Cat::Cat( void )
+Cat::Cat( void ) : Animal()
 {
 	this->type = "Cat";
 	this->brain = new Brain();
@@ -7,10 +7,10 @@ Cat::Cat( void )
 	return;
 }
 
-Cat::Cat( Cat const & src )
+Cat::Cat( Cat const & src ) : Animal(src)
 {
 	std::cout << "Copy constructor for Cat called" << std::endl;
-	*this = src;
+	this->brain = new Brain(*src.brain);
 	return;
 }
 
@@ -23,17 +23,19 @@ Cat::~Cat( void )
 
 Cat		&Cat::operator=( Cat const &rhs )
 {
+	delete this->brain;
 	std::cout << "Assignement operator for Cat called" << std::endl;
 	this->type = rhs.getType();
-	*(this->brain) = *(rhs.getBrain());
+	this->brain = new Brain(*rhs.getBrain());
 	return *this;
 }
 
 Animal	&Cat::operator=( Animal const &rhs )
 {
+	delete this->brain;
 	std::cout << "Animal Assignement operator for Cat called" << std::endl;
 	this->type = rhs.getType();
-	*(this->brain) = *(rhs.getBrain());
+	this->brain = new Brain(*rhs.getBrain());
 	return *this;
 }
 

@@ -9,9 +9,9 @@ public:
 
 	Cat( void );
 	Cat( const Cat &src );
-	~Cat( void );
+	virtual ~Cat( void );
 
-	Cat				&operator=( Cat const & rhs );
+	virtual Cat				&operator=( Cat const & rhs );
 	virtual Animal	&operator=( const Animal &other );
 
 	virtual void	makeSound( void ) const ;

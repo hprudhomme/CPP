@@ -38,6 +38,6 @@ const std::string	&Animal::getType( void ) const
 
 std::ostream	&operator<<( std::ostream &ostream, const Animal &instance )
 {
-	ostream << instance.getType();;
+	ostream << instance.getType();
 	return ostream;
 }

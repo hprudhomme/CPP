@@ -1,5 +1,5 @@
 #include "Dog.hpp"
-Dog::Dog( void )
+Dog::Dog( void ) : AAnimal()
 {
 	this->type = "Dog";
 	this->brain = new Brain();
@@ -7,10 +7,10 @@ Dog::Dog( void )
 	return;
 }
 
-Dog::Dog( Dog const & src )
+Dog::Dog( Dog const & src ) : AAnimal(src)
 {
 	std::cout << "Copy constructor for Dog called" << std::endl;
-	*this = src;
+	this->brain = new Brain(*src.brain);
 	return;
 }
 
@@ -23,17 +23,19 @@ Dog::~Dog( void )
 
 Dog		&Dog::operator=( Dog const & rhs )
 {
+	delete this->brain;
 	std::cout << "Assignement operator for Dog called" << std::endl;
 	this->type = rhs.getType();
-	*(this->brain) = *(rhs.getBrain());
+	this->brain = new Brain(*rhs.getBrain());
 	return *this;
 }
 
 AAnimal	&Dog::operator=( AAnimal const &rhs )
 {
-	std::cout << "Animal Assignement operator for Dog called" << std::endl;
+	delete this->brain;
+	std::cout << "AAnimal Assignement operator for Dog called" << std::endl;
 	this->type = rhs.getType();
-	*(this->brain) = *(rhs.getBrain());
+	this->brain = new Brain(*rhs.getBrain());
 	return *this;
 }
 

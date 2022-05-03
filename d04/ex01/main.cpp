@@ -23,10 +23,20 @@ int	main( void )
 	brain->ideas[1] = "That's a strange idea I'm having";
 	brain->ideas[2] = "Ball!!!!!";
 	brain->ideas[3] = "Squirrel!!!!!";
-	std::cout << animals[7]->getBrain()->ideas[0] << std::endl;
 
+	std::cout << "animal 7"<< std::endl;
+	std::cout << animals[7]->getBrain()->ideas[0] << std::endl;
+	std::cout << animals[7]->getType() << std::endl;
+
+	std::cout << "copy animal 7"<< std::endl;
+	Cat copy(*(Cat *)animals[7]);
+	std::cout << copy.getBrain()->ideas[3] << std::endl;
+	std::cout << animals[7]->getType() << std::endl;
+
+	std::cout << "copy animal 5=7"<< std::endl;
 	*(animals[5]) = *(animals[7]);
 	std::cout << animals[5]->getBrain()->ideas[2] << std::endl;
+	std::cout << animals[7]->getType() << std::endl;
 
 	for (int i = 0; i < NUMBER_OF_ANIMALS; i++)
 		delete animals[i];
