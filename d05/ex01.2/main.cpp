@@ -1,6 +1,6 @@
 # include <iostream>
-# include "bureaucrat.hpp"
-# include "form.hpp"
+# include "Bureaucrat.hpp"
+# include "Form.hpp"
 
 int main(void)
 {
@@ -12,7 +12,7 @@ int main(void)
 	form1.beSigned(francis);
 	std::cout << form1 << std::endl;
 
-	std::cout << "---" << std::endl;
+	std::cout << " 1 ---" << std::endl;
 
 	Form form2("NDA", 99, 50);
 	std::cout << form2 << std::endl;
@@ -26,11 +26,9 @@ int main(void)
 	}
 	std::cout << form2 << std::endl;
 
-	std::cout << "---" << std::endl;
+	std::cout << " 2 ---" << std::endl;
 
-	Form form3("Other Paper", 101, 50);
-	std::cout << form3 << std::endl;
-	francis.signForm(form3);
+	Form form3("Other Paper", 100, 50);
 	std::cout << form3 << std::endl;
 	try
 	{
@@ -42,7 +40,16 @@ int main(void)
 	}
 	std::cout << form3 << std::endl;
 
-	std::cout << "---" << std::endl;
+	try
+	{
+		francis.signForm(form3);
+	}
+	catch(std::exception const &e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+
+	std::cout << " 3 ---" << std::endl;
 
 	try
 	{
@@ -56,7 +63,7 @@ int main(void)
 		std::cerr << e.what() << std::endl;
 	}
 
-	std::cout << "---" << std::endl;
+	std::cout << " 4 ---" << std::endl;
 
 	try
 	{
@@ -68,7 +75,7 @@ int main(void)
 		std::cerr << e.what() << std::endl;
 	}
 
-	std::cout << "---" << std::endl;
+	std::cout << " 5 ---" << std::endl;
 
 	try
 	{
@@ -80,7 +87,7 @@ int main(void)
 		std::cerr << e.what() << std::endl;
 	}
 
-	std::cout << "---" << std::endl;
+	std::cout << " 6 ---" << std::endl;
 
 	try
 	{
@@ -92,7 +99,7 @@ int main(void)
 		std::cerr << e.what() << std::endl;
 	}
 
-	std::cout << "---" << std::endl;
+	std::cout << " 7 ---" << std::endl;
 
 	try
 	{

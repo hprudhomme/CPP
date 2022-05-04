@@ -10,6 +10,9 @@ public:
 	Dog( const Dog &src );
 	~Dog( void );
 
+	virtual Dog		&operator=( Dog const & rhs );
+	virtual Animal	&operator=( const Animal &other );
+
 	virtual void	makeSound( void ) const ;
 
 private:

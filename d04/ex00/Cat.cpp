@@ -19,6 +19,20 @@ Cat::~Cat( void )
 	return;
 }
 
+Cat		&Cat::operator=( Cat const &rhs )
+{
+	std::cout << "Assignement operator for Cat called" << std::endl;
+	this->type = rhs.getType();
+	return *this;
+}
+
+Animal	&Cat::operator=( Animal const &rhs )
+{
+	std::cout << "Animal Assignement operator for Cat called" << std::endl;
+	this->type = rhs.getType();
+	return *this;
+}
+
 void	Cat::makeSound( void ) const
 {
 	std::cout << "Meeeeeeeow"

@@ -21,6 +21,8 @@ int	main(void)
 		std::cout << e.what() << std::endl;
 	}
 
+	std::cout << " 1 ---" << std::endl;
+
 	try
 	{
 		form = new PresidentialPardonForm("28A");
@@ -34,6 +36,7 @@ int	main(void)
 		std::cout << e.what() << std::endl;
 	}
 
+	std::cout << " 2 ---" << std::endl;
 
 	try
 	{
@@ -56,6 +59,7 @@ int	main(void)
 		std::cout << e.what() << std::endl;
 	}
 
+	std::cout << " 3 ---" << std::endl;
 
 	try
 	{

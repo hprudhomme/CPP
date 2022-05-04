@@ -19,6 +19,20 @@ Dog::~Dog( void )
 	return;
 }
 
+Dog		&Dog::operator=( Dog const & rhs )
+{
+	std::cout << "Assignement operator for Dog called" << std::endl;
+	this->type = rhs.getType();
+	return *this;
+}
+
+Animal	&Dog::operator=( Animal const &rhs )
+{
+	std::cout << "Animal Assignement operator for Dog called" << std::endl;
+	this->type = rhs.getType();
+	return *this;
+}
+
 void	Dog::makeSound( void ) const
 {
 	std::cout << "Wouf!" << std::endl;

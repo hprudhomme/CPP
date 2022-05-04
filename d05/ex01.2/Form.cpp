@@ -85,7 +85,7 @@ void	Form::checkGrades( void ) const
 
 bool	Form::beSigned( const Bureaucrat &bureaucrat )
 {
-	if (bureaucrat.getGrade() < this->_gradeToSign)
+	if (bureaucrat.getGrade() <= this->_gradeToSign)
 	{
 		this->_isSigned = true;
 		return true;
@@ -93,6 +93,7 @@ bool	Form::beSigned( const Bureaucrat &bureaucrat )
 	else
 	{
 		this->_isSigned = false;
+		throw Form::GradeTooLowException();
 		return false;
 	}
 }
